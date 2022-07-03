@@ -7,38 +7,46 @@
 }
 
 .full-page {
-  max-width: 100vw;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   background-image: url(./images/bg-intro-desktop.png);
   background-color: var(--red);
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
   padding: 100px;
 }
 
 .form-info {
-  width: 50%;
+  width: 40%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: white;
   margin: 30px;
 }
 .form-title {
   font-size: 50px;
   line-height: 50px;
-  margin-bottom:30px;
+  margin-bottom: 30px;
+}
+
+.form-description {
+  font-size: 15px;
+  opacity: 0.9;
 }
 .boxes-container {
-  width: 50%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 .purple-box {
+  height: 50px;
+  width: 450px;
+  margin-bottom: 18px;
   background-color: var(--blue);
   border-radius: 10px;
   font-size: 12px;
@@ -48,9 +56,11 @@
   align-items: center;
   box-shadow: 0 7px rgba(0, 0, 0, 0.2);
   border: black;
+  letter-spacing: 1px;
 }
 .white-box {
-  height: 300px;
+  height: auto;
+  width: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,11 +69,70 @@
   border-radius: 10px;
   box-shadow: 0 7px rgba(0, 0, 0, 0.2);
   border: black;
-  padding: 20px;
+  padding: 40px;
 }
 .green-button {
+  width: 100%;
+  height: 45px;
+  font-weight: 500;
   background-color: var(--green);
   border-radius: 5px;
+  border: 1px solid var(--green);
   color: white;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px hsla(154, 59%, 51%, 0.118);
+  padding: 15px 25px;
+}
+
+.green-button:active {
+  background-color: hsla(154, 59%, 51%, 0.389);
+  border: 1px solid hsla(154, 59%, 51%, 0.389);
+  cursor: pointer;
+}
+input {
+  width: 100%;
+  height: 45px;
+  padding: 15px 25px;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 5px;
+  border: 1px solid var(--grayishBlue);
+  margin-bottom: 15px;
+}
+
+input:focus {
+  border: 2px solid var(--darkBlue);
+  outline: none;
+}
+.termsandservices {
+  font-size: 10px;
+  margin-top: 10px;
+  color: hsl(246, 25%, 77%);
+}
+#redhighlight {
+  color: var(--red);
+  font-weight: 700;
+}
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+small {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--red);
+  position: relative;
+  bottom: 10px;
+  font-size: 10px;
+  display: none;
+}
+#icon-error {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  right:5px;
+  top:5px;
 }

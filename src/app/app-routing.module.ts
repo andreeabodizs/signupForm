@@ -1,9 +1,9 @@
 import { TheFormComponent } from './the-form/the-form.component';
-import { AppComponent } from './../../../toDoList/src/app/app.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
 
-const routes: Routes = [{ path: '', component: TheFormComponent }];
+const routes: Routes = [{ path: '', component: AppComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
