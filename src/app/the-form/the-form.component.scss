@@ -27,6 +27,7 @@
   color: white;
   margin: 30px;
 }
+
 .form-title {
   font-size: 50px;
   line-height: 50px;
@@ -37,12 +38,14 @@
   font-size: 15px;
   opacity: 0.9;
 }
+
 .boxes-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
+
 .purple-box {
   height: 50px;
   width: 450px;
@@ -57,7 +60,11 @@
   box-shadow: 0 7px rgba(0, 0, 0, 0.2);
   border: black;
   letter-spacing: 1px;
+  .try-it {
+    margin: 0px;
+  }
 }
+
 .white-box {
   height: auto;
   width: 450px;
@@ -71,6 +78,30 @@
   border: black;
   padding: 40px;
 }
+
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+input {
+  width: 100%;
+  height: 45px;
+  padding: 15px 25px;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 5px;
+  border: 1px solid var(--grayishBlue);
+  margin-bottom: 15px;
+}
+
+input:focus {
+  border: 2px solid var(--darkBlue);
+  outline: none;
+}
+
 .green-button {
   width: 100%;
   height: 45px;
@@ -90,49 +121,31 @@
   border: 1px solid hsla(154, 59%, 51%, 0.389);
   cursor: pointer;
 }
-input {
-  width: 100%;
-  height: 45px;
-  padding: 15px 25px;
-  font-weight: 600;
-  font-size: 13px;
-  border-radius: 5px;
-  border: 1px solid var(--grayishBlue);
-  margin-bottom: 15px;
-}
 
-input:focus {
-  border: 2px solid var(--darkBlue);
-  outline: none;
-}
 .termsandservices {
   font-size: 10px;
   margin-top: 10px;
   color: hsl(246, 25%, 77%);
 }
-#redhighlight {
+
+.redhighlight {
   color: var(--red);
   font-weight: 700;
 }
-.input-group {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-small {
+
+.error-message {
   font-style: italic;
   font-weight: 500;
   color: var(--red);
   position: relative;
   bottom: 10px;
   font-size: 10px;
-  display: none;
 }
-#icon-error {
-  width: 24px;
-  height: 24px;
-  position: relative;
-  right:5px;
-  top:5px;
-}
+
+// #icon-error {
+//   width: 24px;
+//   height: 24px;
+//   position: relative;
+//   right: 5px;
+//   top: 5px;
+// }
