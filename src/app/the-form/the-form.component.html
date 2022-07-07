@@ -39,7 +39,8 @@
           formControlName="emailAddress"
           placeholder="Email Address"
           required
-          [ngClass] = "{'email-example': form.controls['emailAddress'].invalid && form.controls['emailAddress'].touched}"
+          [ngClass] = "{'email-example': isInvalid &&
+          form.controls['emailAddress'].invalid}"
         />
         <div *ngIf="form.controls['emailAddress'].invalid && isInvalid" class="error-message">Looks like this is not an email</div>
 
