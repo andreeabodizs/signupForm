@@ -15,7 +15,7 @@ export class TheFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
-    this.onSubmit();
+  
   }
   
   public createForm() {
@@ -26,7 +26,7 @@ export class TheFormComponent implements OnInit {
       'password': new FormControl('', Validators.required),
   });
   }
-  public onSubmit() {
+  public saveForm() {
     if(this.form.valid){
       console.log("Form submitted!");
       this.form.reset();
@@ -34,6 +34,9 @@ export class TheFormComponent implements OnInit {
     } else {
       console.log("Invalid form!");
       this.isInvalid = true;
+      if (this.form.controls['emailAddress'].invalid){
+        this.form.controls['emailAddress'].setValue("email@example/com");
+      }
     }
   }
 }

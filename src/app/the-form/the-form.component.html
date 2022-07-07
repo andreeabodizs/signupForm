@@ -11,7 +11,7 @@
     <div class="purple-box">
       <p class="try-it"><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
     </div>
-    <form (ngSubmit)="onSubmit()" class="white-box" [formGroup]="form">
+    <form class="white-box" [formGroup]="form">
       <div class="input-group">
         <input
           type="text"
@@ -19,7 +19,8 @@
           placeholder="First Name"
           required
         />
-        <div *ngIf="form.controls['firstName']".invalid class="error-message">First Name cannot be empty</div>
+        <div *ngIf="form.controls['firstName'].invalid && isInvalid" class="error-message">First Name cannot be empty</div>
+        
       </div>
 
       <div class="input-group">
@@ -29,7 +30,7 @@
           placeholder="Last Name"
           required
         />
-        <div *ngIf="isInvalid" class="error-message">Last Name cannot be empty</div>
+        <div *ngIf="form.controls['lastName'].invalid && isInvalid" class="error-message">Last Name cannot be empty</div>
       </div>
 
       <div class="input-group">
@@ -38,8 +39,9 @@
           formControlName="emailAddress"
           placeholder="Email Address"
           required
+          [ngClass] = "{'email-example': form.controls['emailAddress'].invalid && form.controls['emailAddress'].touched}"
         />
-        <div *ngIf="isInvalid" class="error-message">Looks like this is not an email</div>
+        <div *ngIf="form.controls['emailAddress'].invalid && isInvalid" class="error-message">Looks like this is not an email</div>
 
       </div>
 
@@ -50,10 +52,10 @@
           placeholder="Password"
           required
         />
-        <div *ngIf="isInvalid" class="error-message">Password cannot be empty</div>
+        <div *ngIf="form.controls['password'].invalid && isInvalid" class="error-message">Password cannot be empty</div>
       </div>
 
-      <button type="submit" class="green-button">Claim your free trial</button>
+      <button (click) = "saveForm()" class="green-button">Claim your free trial</button>
       <p class="termsandservices">
         By clicking the button, you are agreeing to our
         <strong class="redhighlight">Terms and Services</strong>
